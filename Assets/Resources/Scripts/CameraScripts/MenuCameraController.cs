@@ -5,20 +5,27 @@ using UnityEngine;
 public class MenuCameraController : MonoBehaviour {
 
 	public Transform currentMount;
-	public float speedFactor = 0.1f;
+	private float speedFactor = 0.1f;
+
+	private Vector3 offest;
 
 	// Use this for initialization
 	void Start () {
-		
+		//this.resetCam ();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		transform.position = Vector3.Lerp (transform.position, currentMount.position, speedFactor);
-		transform.rotation = Quaternion.Slerp (transform.rotation, currentMount.rotation, speedFactor);
+	void LateUpdate () {
+		this.resetCam ();
 	}
 
 	public void SetMount(Transform newMount) {
 		this.currentMount = newMount;
+	}
+
+	public void resetCam()
+	{
+		transform.position = Vector3.Lerp (transform.position, currentMount.position, speedFactor);
+		transform.rotation = Quaternion.Slerp (transform.rotation, currentMount.rotation, speedFactor);
 	}
 }

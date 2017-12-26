@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\OVR\Scripts\Composition\OVRCameraComposition.cs" />
      <Compile Include="Assets\OVR\Scripts\Composition\OVRComposition.cs" />
      <Compile Include="Assets\OVR\Scripts\Composition\OVRCompositionUtil.cs" />
@@ -116,8 +117,9 @@
      <Compile Include="Assets\OVRInspector\Scripts\ParticleGazeCursor.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeEventTrigger.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeScroller.cs" />
-     <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonClicked.cs" />
+     <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonsScript.cs" />
      <Compile Include="Assets\Resources\Scripts\CameraScripts\MenuCameraController.cs" />
+     <Compile Include="Assets\VolumeController.cs" />
      <None Include="Assets\OVRInspector\Resources\Quit.txt" />
      <None Include="Assets\OVR\Resources\OVRMRUnlitTransparent.shader" />
      <None Include="Assets\OVR\Resources\OVRMRChromaKey.cginc" />
