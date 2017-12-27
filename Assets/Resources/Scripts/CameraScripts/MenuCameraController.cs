@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuCameraController : MonoBehaviour {
 
 	public Transform currentMount;
-	private float speedFactor = 0.1f;
+	private float speedFactor = 0.02f;
 
 	private Vector3 offest;
 
