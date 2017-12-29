@@ -117,8 +117,15 @@
      <Compile Include="Assets\OVRInspector\Scripts\ParticleGazeCursor.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeEventTrigger.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeScroller.cs" />
+     <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonPlayScript.cs" />
      <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonsScript.cs" />
      <Compile Include="Assets\Resources\Scripts\CameraScripts\MenuCameraController.cs" />
+     <Compile Include="Assets\Resources\Scripts\GunsScripts\AmmoHUD.cs" />
+     <Compile Include="Assets\Resources\Scripts\GunsScripts\EventGunShot.cs" />
+     <Compile Include="Assets\Resources\Scripts\GunsScripts\Gun.cs" />
+     <Compile Include="Assets\Resources\Scripts\GunsScripts\hudScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\WeaponSwitcher\WeaponSelector.cs" />
+     <Compile Include="Assets\Resources\Scripts\WeaponSwitcher\WeaponSwitching.cs" />
      <Compile Include="Assets\VolumeController.cs" />
      <None Include="Assets\OVRInspector\Resources\Quit.txt" />
      <None Include="Assets\OVR\Resources\OVRMRUnlitTransparent.shader" />
