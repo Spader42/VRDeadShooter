@@ -9,18 +9,27 @@ public class Gun : MonoBehaviour {
 
 	private bool canShoot = true;
 
-	// Gun basic informations
-	public int capacity;
+    // Where the projectile should be shoot from
+    public Transform gunEnd;
+
+    private Camera fpsCam;
+    private LineRenderer lineRenderer;
+
+    // Gun basic informations
+    public int capacity;
 	public int magazineSize;
 	public int magazine;
 	public int ammo;
+    public float range = 50;
+    public int damage = 1;
 
-	// Timers to handle gun controls
-	public float shootingTime = 1f;
+    // Timers to handle gun controls
+    public float shootingTime = 1f;
 	public float reloadTime = 1f;
+    private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
 
-	// Animations
-	private Animation animationController;
+    // Animations
+    private Animation animationController;
 
 	public AnimationClip animationShotClip;
 	public AnimationClip animationReloadingClip;
@@ -39,7 +48,10 @@ public class Gun : MonoBehaviour {
 		// Initializing gun's elements
 		this.initializeAnimations();
 		this.initializeSounds();
-	}
+
+        lineRenderer = GetComponent<LineRenderer>();
+        fpsCam = GetComponentInParent<Camera>();
+    }
 
 	/// <summary>
 	/// Initialize the various gun animations
@@ -117,9 +129,31 @@ public class Gun : MonoBehaviour {
 		// Play the shooting animation and the gun sound
 		this.PlayAnimationClip(this.animationShotClip);
 		this.audioSourceGunSound.Play ();
-			
-		// Counting down ammos
-		ammo--;
+
+        Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        Debug.Log("fpsCam = " + fpsCam);
+
+        RaycastHit hit;
+
+        lineRenderer.SetPosition(0, gunEnd.position);
+        if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, range))
+        {
+            lineRenderer.SetPosition(1, hit.point);
+            IDamageable health = hit.collider.GetComponent<IDamageable>();
+            if (health != null)
+            {
+                Debug.Log("touché");
+                health.Damage(damage, hit.point);
+            }
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, rayOrigin + (fpsCam.transform.forward * range));
+        }
+
+
+        // Counting down ammos
+        ammo--;
 		magazine--;
 	}
 
@@ -173,4 +207,11 @@ public class Gun : MonoBehaviour {
 	private void PlayAnimationClip(AnimationClip animationClip) {
 		this.animationController.Play (animationClip.name);
 	}
+
+    private IEnumerator ShotEffect()
+    {
+        lineRenderer.enabled = true;
+        yield return shotDuration;
+        lineRenderer.enabled = false;
+    }
 }

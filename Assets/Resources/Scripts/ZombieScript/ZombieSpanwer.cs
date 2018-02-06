@@ -26,6 +26,7 @@ public class ZombieSpanwer : MonoBehaviour {
 
     void Spawn()
     {
-        Instantiate(zombie, transform.position , transform.rotation);
+        GameObject zombieCree = Instantiate(zombie, transform.position , transform.rotation);
+        zombieCree.SetActive(true);
     }
 }
