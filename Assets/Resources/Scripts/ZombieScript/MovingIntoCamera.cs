@@ -8,6 +8,7 @@ public class MovingIntoCamera : MonoBehaviour {
     public float nearEnoughFromTarget;
     public float speed;
     bool isnearToTarget;
+    static int atakState = Animator.StringToHash("frappe");
     Animator anim;
 
     private void Start()
@@ -18,7 +19,8 @@ public class MovingIntoCamera : MonoBehaviour {
 
     void Update()
     {
-        if (!isnearToTarget && !checkIfNearEnoughFromTarget())
+        AnimatorStateInfo currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
+        if (!checkIfNearEnoughFromTarget() && !currentBaseState.IsName("frappe"))
         {
             float step = speed * Time.deltaTime;
             Vector3 positionTargetWithoutYAxes = target.position;
@@ -36,6 +38,8 @@ public class MovingIntoCamera : MonoBehaviour {
             isnearToTarget = true;
             return true;
         }
+        anim.SetBool("nearToTarget", false);
+        isnearToTarget = false;
         return false;
     }
 }
