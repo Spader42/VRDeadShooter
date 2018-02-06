@@ -3330,7 +3330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab692ca36db76449515994b25b114c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  automatic: 0
+  automatic: 1
   gunEnd: {fileID: 1349866905}
   capacity: 300
   magazineSize: 30
