@@ -13,7 +13,6 @@ public class Gun : MonoBehaviour {
     public Transform gunEnd;
 
     private Camera fpsCam;
-    private LineRenderer lineRenderer;
 
     // Gun basic informations
     public int capacity;
@@ -91,10 +90,10 @@ public class Gun : MonoBehaviour {
 
 	// Update is called once per frame
 	public virtual void Update () {
-		// If this instance of gun is automatic : 
-		// Check event MouseButton - Allows to detect click and when key is kept held
-		// Else only check event MouseButtonDown, so even if the key is held down, the gun will only shoot once
-		if (automatic) {
+        // If this instance of gun is automatic : 
+        // Check event MouseButton - Allows to detect click and when key is kept held
+        // Else only check event MouseButtonDown, so even if the key is held down, the gun will only shoot once
+        if (automatic) {
 			if (Input.GetMouseButton (0)) {
 				this.HandleShot ();
 			}
@@ -132,7 +131,7 @@ public class Gun : MonoBehaviour {
 
         //Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
         Debug.Log("fpsCam = " + fpsCam);
-        Debug.DrawRay(gunEnd.transform.position, gunEnd.transform.forward, Color.green);
+        
         RaycastHit hit;
         
         if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
@@ -204,8 +203,6 @@ public class Gun : MonoBehaviour {
 
     private IEnumerator ShotEffect()
     {
-        lineRenderer.enabled = true;
         yield return shotDuration;
-        lineRenderer.enabled = false;
     }
 }
