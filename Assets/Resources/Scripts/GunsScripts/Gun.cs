@@ -89,6 +89,7 @@ public class Gun : MonoBehaviour {
 
 	// Update is called once per frame
 	public virtual void Update () {
+        Debug.DrawRay(gunEnd.transform.position, gunEnd.transform.forward, Color.green);
         // If this instance of gun is automatic : 
         // Check event MouseButton - Allows to detect click and when key is kept held
         // Else only check event MouseButtonDown, so even if the key is held down, the gun will only shoot once
@@ -133,6 +134,10 @@ public class Gun : MonoBehaviour {
         
         RaycastHit hit;
 
+        // Counting down ammos
+        ammo--;
+        magazine--;
+
         if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
         {
             IDamageable health = hit.collider.GetComponent<IDamageable>();
@@ -142,19 +147,12 @@ public class Gun : MonoBehaviour {
                 health.Damage(damage, hit.point);
             }
         }
-
-
         if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
         {
             WeaponSelected weapon = hit.collider.GetComponent<WeaponSelected>();
             weapon.setSelectedWeapon();
         }
-
-
-        // Counting down ammos
-        ammo--;
-		magazine--;
-	}
+    }
 
 	/// <summary>
 	/// Determines whether this instance has munition.

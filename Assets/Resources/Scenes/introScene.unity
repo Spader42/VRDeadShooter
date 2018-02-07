@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2050,7 +2049,8 @@ Transform:
   m_LocalRotation: {x: 0.0849894, y: 0.9963575, z: 0.0066567357, w: 0.002059605}
   m_LocalPosition: {x: 0.06, y: 26.94, z: 25.11}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1157193296}
   m_Father: {fileID: 767658955}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -0.74, y: 179.7, z: 9.753}
@@ -2676,7 +2676,6 @@ Transform:
   - {fileID: 281632375}
   - {fileID: 886194445}
   - {fileID: 608965021}
-  - {fileID: 1157193296}
   m_Father: {fileID: 1364854259}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.5, y: 172.1, z: -14.768164}
@@ -4606,12 +4605,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157193295}
-  m_LocalRotation: {x: -0.031382013, y: -0.99948734, z: -0.006160254, w: -0.0015525145}
-  m_LocalPosition: {x: 8.799623, y: 57.49075, z: -2473.3232}
-  m_LocalScale: {x: 0.15000021, y: 0.15000033, z: 5000.0103}
+  m_LocalRotation: {x: -0.00044819457, y: -0.0008263367, z: 0.053675767, w: -0.99855804}
+  m_LocalPosition: {x: 19.944035, y: -12.148132, z: 12493.155}
+  m_LocalScale: {x: 0.7500013, y: 0.750002, z: 25000.059}
   m_Children: []
-  m_Father: {fileID: 767658955}
-  m_RootOrder: 3
+  m_Father: {fileID: 608965021}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.7, y: -180.2, z: 3.5980003}
 --- !u!23 &1157193297
 MeshRenderer:
@@ -4730,7 +4729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f96d610e61f347ae7f66b0737c390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1417105517}
   nearEnoughFromTarget: 30
   speed: 6
 --- !u!114 &1167804277
@@ -5149,7 +5148,7 @@ MonoBehaviour:
   magazineSize: 30
   magazine: 30
   ammo: 120
-  range: 1500
+  range: 15000
   damage: 1
   shootingTime: 1
   reloadTime: 1
@@ -6072,11 +6071,11 @@ ParticleSystem:
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
-    m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
+    m_MeshMaterialIndex: 0
+    m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
@@ -6792,47 +6791,6 @@ ParticleSystem:
         - serializedVersion: 2
           time: 1
           value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    speedModifier:
-      serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
-      maxCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 2
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      minCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 2
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -8230,7 +8188,6 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 0
-    mode: 0
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -8275,14 +8232,12 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    ribbonCount: 1
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0
-    splitSubEmitterRibbons: 0
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -8956,7 +8911,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364854258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.08000183, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 767658955}
@@ -9160,7 +9115,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -9172,7 +9126,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417105510}
   m_LocalRotation: {x: 0.3330139, y: 0.064936355, z: -0.022995168, w: 0.9404022}
-  m_LocalPosition: {x: 0, y: 0, z: -18}
+  m_LocalPosition: {x: -0.9569092, y: -1.0663757, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1364854259}
