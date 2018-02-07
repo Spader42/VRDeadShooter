@@ -7,6 +7,7 @@ public class MenuCameraController : MonoBehaviour {
 	public Transform currentMount;
 	private float speedFactor = 0.02f;
     public float speedFactorE = 0.0f;
+    public float speedRotation = 0.0f;
 
 	private Vector3 offest;
 
@@ -31,6 +32,13 @@ public class MenuCameraController : MonoBehaviour {
 	public void resetCam()
 	{
 		transform.position = Vector3.Lerp (transform.position, currentMount.position, speedFactor);
-		transform.rotation = Quaternion.Slerp (transform.rotation, currentMount.rotation, speedFactor);
+        if(speedRotation == 0.0f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, currentMount.rotation, speedFactor);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, currentMount.rotation, speedRotation);
+        }
 	}
 }
