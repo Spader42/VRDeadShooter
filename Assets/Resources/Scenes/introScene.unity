@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -201,10 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 7
   secBeforeFirstSpawn: 1
-  nbKillForDifficultyToUp: 25
-  chanceThatAZombieDontSpawn: 10
+  nbKillForDifficultyToUp: 6
+  chanceThatAZombieDontSpawn: 2
   speedZombieMin: 15
   speedZombieMax: 35
   zombie: {fileID: 1167804273}
@@ -269,7 +269,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99169050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 364, y: -13, z: 259}
+  m_LocalPosition: {x: 364, y: 0, z: 259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1817608592}
@@ -1214,10 +1214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 4
   secBeforeFirstSpawn: 1
-  nbKillForDifficultyToUp: 25
-  chanceThatAZombieDontSpawn: 10
+  nbKillForDifficultyToUp: 8
+  chanceThatAZombieDontSpawn: 20
   speedZombieMin: 15
   speedZombieMax: 35
   zombie: {fileID: 1167804273}
@@ -2143,7 +2143,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 506412167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 652, y: -918, z: -354}
+  m_LocalPosition: {x: 343, y: 0, z: -310}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1817608592}
@@ -3238,10 +3238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 6
   secBeforeFirstSpawn: 1
-  nbKillForDifficultyToUp: 25
-  chanceThatAZombieDontSpawn: 10
+  nbKillForDifficultyToUp: 8
+  chanceThatAZombieDontSpawn: 4
   speedZombieMin: 15
   speedZombieMax: 35
   zombie: {fileID: 1167804273}
@@ -3342,9 +3342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 2
   secBeforeFirstSpawn: 1
-  nbKillForDifficultyToUp: 25
+  nbKillForDifficultyToUp: 4
   chanceThatAZombieDontSpawn: 10
   speedZombieMin: 15
   speedZombieMax: 35
@@ -3607,10 +3607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 6
   secBeforeFirstSpawn: 1
   nbKillForDifficultyToUp: 25
-  chanceThatAZombieDontSpawn: 10
+  chanceThatAZombieDontSpawn: 3
   speedZombieMin: 15
   speedZombieMax: 35
   zombie: {fileID: 1167804273}
@@ -5820,6 +5820,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   scoreboard: {fileID: 953722258}
+  magnum: {fileID: 767658954}
+  ak47: {fileID: 1288481450}
+  pompe: {fileID: 570704252}
 --- !u!65 &1167804278
 BoxCollider:
   m_ObjectHideFlags: 0
