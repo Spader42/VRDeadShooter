@@ -20,7 +20,7 @@ public class MovingIntoCamera : MonoBehaviour {
     void Update()
     {
         AnimatorStateInfo currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
-        if (!checkIfNearEnoughFromTarget() && !currentBaseState.IsName("frappe"))
+        if (!checkIfNearEnoughFromTarget() && currentBaseState.IsName("walk"))
         {
             float step = speed * Time.deltaTime;
             Vector3 positionTargetWithoutYAxes = target.position;
