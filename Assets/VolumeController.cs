@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour {
 
-	public AudioSource source;
+	public AudioSource source = MusicController.Instance.gameObject.GetComponent<AudioSource>();
 	private Slider slider;
 
 	// Use this for initialization

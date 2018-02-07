@@ -117,6 +117,8 @@
      <Compile Include="Assets\OVRInspector\Scripts\ParticleGazeCursor.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeEventTrigger.cs" />
      <Compile Include="Assets\OVRInspector\Scripts\UIUtils\OVRGazeScroller.cs" />
+     <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonBack.cs" />
+     <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonNext.cs" />
      <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonPlayScript.cs" />
      <Compile Include="Assets\Resources\Scripts\ButtonsScripts\ButtonsScript.cs" />
      <Compile Include="Assets\Resources\Scripts\CameraScripts\MenuCameraController.cs" />

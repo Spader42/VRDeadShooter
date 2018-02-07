@@ -9,23 +9,41 @@ public class MusicController : MonoBehaviour {
 	private AudioSource source;
 	private int currentMusic = 0;
 
-	public Text musicLabel;
+    private static MusicController instance = null;
 
-	void Awake() {
-	}
+    public Text musicLabel;
+    public static MusicController Instance
+    {
+        get { return instance; }
+    }
 
-	// Use this for initialization
-	void Start () {
-		musics = Resources.LoadAll ("Audio/Musics", typeof(AudioClip));
+    void Awake()
+    {
+        musics = Resources.LoadAll("Audio/Musics", typeof(AudioClip));
 
-		Debug.Log (musics.Length);
-		source = this.gameObject.GetComponent<AudioSource> ();
+        Debug.Log(musics.Length);
+        source = this.gameObject.GetComponent<AudioSource>();
 
-		source.clip = musics [currentMusic] as AudioClip;
+        source.clip = musics[currentMusic] as AudioClip;
 
-		if (!source.isPlaying) {
-			PlayRandomMusic ();
-		}
+        if (!source.isPlaying)
+        {
+            PlayRandomMusic();
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+            return;
+        } else {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    // Use this for initialization
+    void Start () {
+
 	}
 	
 	// Update is called once per frame
@@ -35,10 +53,13 @@ public class MusicController : MonoBehaviour {
 		}
 	}
 
-	private void PlayRandomMusic() {
+	public void PlayRandomMusic() {
 		source.clip = musics [Random.Range (0, musics.Length)] as AudioClip;
 		source.Play ();
 		musicLabel.text = source.clip.name;
+
+        Debug.Log("qsfq");
+        ChangeMusic();
 	}
 
 	public void Next() {
@@ -61,7 +82,7 @@ public class MusicController : MonoBehaviour {
 		ChangeMusic ();
 	}
 
-	private void ChangeMusic() {
+	public void ChangeMusic() {
 		source.Stop ();
 		source.clip = musics [currentMusic] as AudioClip;
 		source.Play ();

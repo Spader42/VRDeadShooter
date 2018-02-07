@@ -240,7 +240,7 @@ RectTransform:
   m_Children:
   - {fileID: 200196480}
   m_Father: {fileID: 546793684}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -805,6 +805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMount: {fileID: 11642815}
+  speedFactorE: 0
+  speedRotation: 0
 --- !u!1001 &310067370
 Prefab:
   m_ObjectHideFlags: 0
@@ -1047,7 +1049,7 @@ RectTransform:
   m_Children:
   - {fileID: 310207660}
   m_Father: {fileID: 546793684}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1238,10 +1240,10 @@ RectTransform:
   m_Children:
   - {fileID: 1518309372}
   - {fileID: 181591681}
+  - {fileID: 1945884787}
+  - {fileID: 500442253}
   - {fileID: 71903968}
   - {fileID: 570618052}
-  - {fileID: 500442253}
-  - {fileID: 1945884787}
   m_Father: {fileID: 1786559136}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1355,7 +1357,7 @@ RectTransform:
   m_Children:
   - {fileID: 1275257909}
   m_Father: {fileID: 546793684}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2086,7 +2088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22447164, guid: ecddf75bccab6ea48b6dc9e18de5e089, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22447164, guid: ecddf75bccab6ea48b6dc9e18de5e089, type: 2}
       propertyPath: m_AnchoredPosition.x
