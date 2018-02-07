@@ -130,25 +130,19 @@ public class Gun : MonoBehaviour {
 		this.PlayAnimationClip(this.animationShotClip);
 		this.audioSourceGunSound.Play ();
 
-        Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        //Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
         Debug.Log("fpsCam = " + fpsCam);
-
+        Debug.DrawRay(gunEnd.transform.position, gunEnd.transform.forward, Color.green);
         RaycastHit hit;
-
-        lineRenderer.SetPosition(0, gunEnd.position);
-        if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, range))
+        
+        if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
         {
-            lineRenderer.SetPosition(1, hit.point);
             IDamageable health = hit.collider.GetComponent<IDamageable>();
             if (health != null)
             {
                 Debug.Log("touché");
                 health.Damage(damage, hit.point);
             }
-        }
-        else
-        {
-            lineRenderer.SetPosition(1, rayOrigin + (fpsCam.transform.forward * range));
         }
 
 
