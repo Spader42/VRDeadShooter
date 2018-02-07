@@ -22,18 +22,27 @@ public class EnemyHealth : MonoBehaviour, IDamageable {
         anim.SetBool("takeDamage", false);
     }
 
+    public void DeadAnimationDone()
+    {
+        Defeated();
+    }
+
     public void Damage(int damage, Vector3 hitPoint)
     {
         Instantiate(hitParticles, hitPoint, Quaternion.identity);
         currentHealth -= damage;
-
-        anim.SetBool("nextDamageGauche", !anim.GetBool("nextDamageGauche"));
-        anim.SetBool("takeDamage", true);
-        if (currentHealth <= 0) 
+        
+        if (currentHealth <= 0)
         {
-            Defeated();
+            anim.SetBool("dead", true);
             IncreaseScore();
         }
+        else
+        {
+            anim.SetBool("nextDamageGauche", !anim.GetBool("nextDamageGauche"));
+            anim.SetBool("takeDamage", true);
+        }
+        
     }
 
     private void IncreaseScore()
