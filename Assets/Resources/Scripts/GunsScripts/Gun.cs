@@ -47,8 +47,7 @@ public class Gun : MonoBehaviour {
 		// Initializing gun's elements
 		this.initializeAnimations();
 		this.initializeSounds();
-
-        lineRenderer = GetComponent<LineRenderer>();
+        
         fpsCam = GetComponentInParent<Camera>();
     }
 
