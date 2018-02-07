@@ -6,12 +6,17 @@ public class MenuCameraController : MonoBehaviour {
 
 	public Transform currentMount;
 	private float speedFactor = 0.02f;
+    public float speedFactorE = 0.0f;
 
 	private Vector3 offest;
 
 	// Use this for initialization
 	void Start () {
 		//this.resetCam ();
+        if(speedFactorE != 0.0f)
+        {
+            speedFactor = speedFactorE;
+        }
 	}
 
 	// Update is called once per frame
