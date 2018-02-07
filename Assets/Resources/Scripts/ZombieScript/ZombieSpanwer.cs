@@ -8,6 +8,8 @@ public class ZombieSpanwer : MonoBehaviour {
     public int secBeforeFirstSpawn = 5;
     public int nbKillForDifficultyToUp = 10;
     public int chanceThatAZombieDontSpawn = 10;
+    public int speedZombieMin = 10;
+    public int speedZombieMax = 30;
     public GameObject zombie;
     public GameObject scoreboard;
 
@@ -42,6 +44,8 @@ public class ZombieSpanwer : MonoBehaviour {
             }
         }
         GameObject zombieCree = Instantiate(zombie, transform.position , transform.rotation);
+        zombieCree.GetComponent<MovingIntoCamera>().speed = 
+            Random.Range(speedZombieMin, speedZombieMax);
         zombieCree.SetActive(true);
     }
 }
