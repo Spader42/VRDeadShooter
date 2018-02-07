@@ -9,16 +9,26 @@ public class EnemyHealth : MonoBehaviour, IDamageable {
     public GameObject scoreboard;
 
     private int currentHealth;
+    Animator anim;
 
     void Start()
     {
         currentHealth = startingHealth;
+        anim = this.GetComponent<Animator>();
+    }
+
+    public void TakingDamageAnimationStopped()
+    {
+        anim.SetBool("takeDamage", false);
     }
 
     public void Damage(int damage, Vector3 hitPoint)
     {
         Instantiate(hitParticles, hitPoint, Quaternion.identity);
         currentHealth -= damage;
+
+        anim.SetBool("nextDamageGauche", !anim.GetBool("nextDamageGauche"));
+        anim.SetBool("takeDamage", true);
         if (currentHealth <= 0) 
         {
             Defeated();
