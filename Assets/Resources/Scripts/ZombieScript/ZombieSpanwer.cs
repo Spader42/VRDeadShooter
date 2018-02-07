@@ -6,7 +6,10 @@ public class ZombieSpanwer : MonoBehaviour {
 
     public float spawnTime = 3f;
     public int secBeforeFirstSpawn = 5;
+    public int nbKillForDifficultyToUp = 10;
+    public int chanceThatAZombieDontSpawn = 10;
     public GameObject zombie;
+    public GameObject scoreboard;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +29,18 @@ public class ZombieSpanwer : MonoBehaviour {
 
     void Spawn()
     {
+        int currentScore = int.Parse(scoreboard.GetComponent<TextMesh>().text);
+        int nbZombieKilled = currentScore / 50;
+        int difficulty = nbZombieKilled / nbKillForDifficultyToUp;
+
+        if (chanceThatAZombieDontSpawn > difficulty)
+        {
+            int random = Random.Range(0, (chanceThatAZombieDontSpawn - difficulty));
+            if (random != 0)
+            {
+                return;
+            }
+        }
         GameObject zombieCree = Instantiate(zombie, transform.position , transform.rotation);
         zombieCree.SetActive(true);
     }
