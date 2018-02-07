@@ -130,6 +130,7 @@
      <Compile Include="Assets\Resources\Scripts\ZombieScript\EnemyHealth.cs" />
      <Compile Include="Assets\Resources\Scripts\ZombieScript\MovingIntoCamera.cs" />
      <Compile Include="Assets\Resources\Scripts\ZombieScript\ZombieSpanwer.cs" />
+     <Compile Include="Assets\SelectGun.cs" />
      <Compile Include="Assets\VolumeController.cs" />
      <None Include="Assets\OVRInspector\Resources\Quit.txt" />
      <None Include="Assets\OVR\Resources\OVRMRUnlitTransparent.shader" />
