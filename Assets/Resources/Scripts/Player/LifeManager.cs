@@ -8,6 +8,12 @@ public class LifeManager : MonoBehaviour {
     public GameObject lifeText;
     public Transform gameOverMount;
     public GameObject cameraHolder;
+    public GameObject weaponHolder;
+    public GameObject ScoreHolder;
+    public GameObject ScoreText;
+    public GameObject ScoreFinalText;
+    public GameObject LifeBar;
+    public GameObject FinaleScore;
 
     // Use this for initialization
     void Start () {
@@ -26,6 +32,11 @@ public class LifeManager : MonoBehaviour {
         if (life <= 0)
         {
             cameraHolder.GetComponent<MenuCameraController>().SetMount(gameOverMount);
+            weaponHolder.SetActive(false);
+            ScoreHolder.SetActive(false);
+            LifeBar.SetActive(false);
+            ScoreFinalText.GetComponent<TextMesh>().text = ScoreText.GetComponent<TextMesh>().text;
+            FinaleScore.SetActive(true);
             StartCoroutine(loadMenu());
         }
     }
