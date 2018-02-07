@@ -206,9 +206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 5
-  secBeforeFirstSpawn: 5
+  spawnTime: 1
+  secBeforeFirstSpawn: 1
+  nbKillForDifficultyToUp: 1
+  chanceThatAZombieDontSpawn: 10
   zombie: {fileID: 1167804273}
+  scoreboard: {fileID: 953722258}
 --- !u!23 &99169052
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -269,7 +272,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99169050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73, y: 0, z: 23.800001}
+  m_LocalPosition: {x: 79.7, y: 0, z: 41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1817608592}
@@ -375,6 +378,57 @@ Transform:
   m_Father: {fileID: 500847271}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &121987958 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1859141617802594, guid: 1b9abf2d50e5fad499bc7f6aa5239d76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1843974552}
+--- !u!65 &121987959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121987958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.55, y: 1.15, z: 1.21}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &121987960
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121987958}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 3fac3b9744290eb4c89b0e4ffd5fe085, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &167909193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,8 +4546,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.035807, y: 1, z: 17.92751}
-  m_Center: {x: -4.67, y: 15.9, z: 8.45}
+  m_Size: {x: 4.12, y: 6.79, z: 15.81}
+  m_Center: {x: 3.62, y: 14.31, z: 8.45}
 --- !u!1001 &1099446321
 Prefab:
   m_ObjectHideFlags: 0
@@ -4549,105 +4603,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4002240760529930, guid: 35b392d2e4fa07346b96c930ab965775,
     type: 2}
   m_PrefabInternal: {fileID: 1099446321}
---- !u!1 &1106796318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1106796323}
-  - component: {fileID: 1106796322}
-  - component: {fileID: 1106796321}
-  - component: {fileID: 1106796320}
-  - component: {fileID: 1106796319}
-  m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1106796319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106796318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d649d9037a2f71740874b583ba0a5e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTime: 5
-  secBeforeFirstSpawn: 5
-  zombie: {fileID: 1167804273}
---- !u!23 &1106796320
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106796318}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &1106796321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106796318}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1106796322
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106796318}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1106796323
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1106796318}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1817608592}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1133054027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,6 +4734,7 @@ GameObject:
   - component: {fileID: 1167804277}
   - component: {fileID: 1167804276}
   - component: {fileID: 1167804279}
+  - component: {fileID: 1167804280}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -4855,7 +4811,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1167804273}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.6, y: 23, z: 3.41}
@@ -4874,6 +4830,40 @@ MonoBehaviour:
   lifeText: {fileID: 1400687627}
   gameOverMount: {fileID: 103599862}
   cameraHolder: {fileID: 118113406}
+--- !u!23 &1167804280
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167804273}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1184825106
 GameObject:
   m_ObjectHideFlags: 0
@@ -10162,7 +10152,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 99169055}
-  - {fileID: 1106796323}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10844,8 +10833,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0, y: 3.3848436, z: 12.015868}
-  m_Center: {x: -0.49999976, y: 0.15462366, z: 0.27593008}
+  m_Size: {x: 1.3, y: 2.87, z: 12.015868}
+  m_Center: {x: 0.08, y: 0.15462366, z: 0.27593008}
 --- !u!1001 &2119225163
 Prefab:
   m_ObjectHideFlags: 0
