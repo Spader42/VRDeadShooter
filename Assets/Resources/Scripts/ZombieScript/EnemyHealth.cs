@@ -35,6 +35,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable {
         if (currentHealth <= 0)
         {
             anim.SetBool("dead", true);
+            BoxCollider boxCollider = gameObject.GetComponent<BoxCollider>();
+            Vector3 size;
+            size.x = 0;
+            size.y = 0;
+            size.z = 0;
+            boxCollider.size = size;
             IncreaseScore();
         }
         else
