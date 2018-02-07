@@ -125,6 +125,7 @@
      <Compile Include="Assets\Resources\Scripts\GunsScripts\Gun.cs" />
      <Compile Include="Assets\Resources\Scripts\GunsScripts\hudScript.cs" />
      <Compile Include="Assets\Resources\Scripts\GunsScripts\IDamageable.cs" />
+     <Compile Include="Assets\Resources\Scripts\WeaponSwitcher\WeaponSelected.cs" />
      <Compile Include="Assets\Resources\Scripts\WeaponSwitcher\WeaponSelector.cs" />
      <Compile Include="Assets\Resources\Scripts\WeaponSwitcher\WeaponSwitching.cs" />
      <Compile Include="Assets\Resources\Scripts\ZombieScript\EnemyHealth.cs" />

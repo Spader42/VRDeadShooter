@@ -133,7 +133,7 @@ public class Gun : MonoBehaviour {
         Debug.Log("fpsCam = " + fpsCam);
         
         RaycastHit hit;
-        
+
         if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
         {
             IDamageable health = hit.collider.GetComponent<IDamageable>();
@@ -142,6 +142,13 @@ public class Gun : MonoBehaviour {
                 Debug.Log("touché");
                 health.Damage(damage, hit.point);
             }
+        }
+
+
+        if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
+        {
+            WeaponSelected weapon = hit.collider.GetComponent<WeaponSelected>();
+            weapon.setSelectedWeapon();
         }
 
 
