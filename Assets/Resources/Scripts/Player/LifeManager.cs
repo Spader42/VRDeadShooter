@@ -14,6 +14,7 @@ public class LifeManager : MonoBehaviour {
     public GameObject ScoreFinalText;
     public GameObject LifeBar;
     public GameObject FinaleScore;
+    public GameObject panel;
 
     // Use this for initialization
     void Start () {
@@ -25,7 +26,9 @@ public class LifeManager : MonoBehaviour {
 
     }
 
-    void takeDamage(int damage) {
+    void takeDamage(int damage)
+    {
+        StartCoroutine(Hit());
         int life = int.Parse(lifeText.GetComponent<TextMesh>().text);
         life -= damage;
         lifeText.GetComponent<TextMesh>().text = life.ToString();
@@ -44,5 +47,13 @@ public class LifeManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("SceneMenu");
+    }
+
+
+    IEnumerator Hit()
+    {
+        panel.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        panel.SetActive(false);
     }
 }
