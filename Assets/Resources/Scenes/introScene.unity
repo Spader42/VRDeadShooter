@@ -5860,6 +5860,10 @@ MonoBehaviour:
   ScoreFinalText: {fileID: 407744669}
   LifeBar: {fileID: 376587519}
   FinaleScore: {fileID: 305516590}
+  zombieHit: {fileID: 8300000, guid: 0cb96488c5599dc428883fa817910d5a, type: 3}
+  sourceZombieHit: {fileID: 0}
+  gameOver: {fileID: 8300000, guid: 5bf812b35aaba2a40a2c8c9fde7c63cf, type: 3}
+  sourceGameOver: {fileID: 0}
 --- !u!23 &1167804280
 MeshRenderer:
   m_ObjectHideFlags: 0
