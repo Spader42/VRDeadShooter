@@ -2502,8 +2502,8 @@ MonoBehaviour:
   magazineSize: 4
   magazine: 4
   ammo: 36
-  range: 1500
-  damage: 3
+  range: 5000
+  damage: 4
   shootingTime: 1
   reloadTime: 1
   animationShotClip: {fileID: 7400000, guid: 415436d0728d6c244aaff0973500a2e0, type: 2}
@@ -3892,8 +3892,8 @@ MonoBehaviour:
   magazineSize: 6
   magazine: 6
   ammo: 100
-  range: 1500
-  damage: 1
+  range: 5000
+  damage: 2
   shootingTime: 1
   reloadTime: 1
   animationShotClip: {fileID: 7400000, guid: 250c40a3ad9212d42900882568879420, type: 2}
@@ -5823,7 +5823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bc72607f4a56948ae0ca4fa00930c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 4
   scoreboard: {fileID: 953722258}
   magnum: {fileID: 767658954}
   ak47: {fileID: 1288481450}
@@ -6360,7 +6360,7 @@ MonoBehaviour:
   magazineSize: 30
   magazine: 30
   ammo: 120
-  range: 15000
+  range: 5000
   damage: 1
   shootingTime: 1
   reloadTime: 1

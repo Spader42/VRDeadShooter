@@ -113,8 +113,16 @@ public class Gun : MonoBehaviour {
 			return;
 		}
 
-		// If out of ammo, play the sound of the gun clicking
-		if (!this.HasMunition ()) {
+        RaycastHit hit;
+
+        if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
+        {
+            WeaponSelected weapon = hit.collider.GetComponent<WeaponSelected>();
+            if (weapon != null)
+                weapon.setSelectedWeapon();
+        }
+        // If out of ammo, play the sound of the gun clicking
+        if (!this.HasMunition ()) {
 			this.audioSourceGunClick.Play ();
 			return;
 		}
@@ -132,8 +140,6 @@ public class Gun : MonoBehaviour {
         //Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
         Debug.Log("fpsCam = " + fpsCam);
         
-        RaycastHit hit;
-
         // Counting down ammos
         ammo--;
         magazine--;
@@ -146,11 +152,6 @@ public class Gun : MonoBehaviour {
                 Debug.Log("touché");
                 health.Damage(damage, hit.point);
             }
-        }
-        if (Physics.Raycast(gunEnd.transform.position, gunEnd.transform.forward, out hit, range))
-        {
-            WeaponSelected weapon = hit.collider.GetComponent<WeaponSelected>();
-            weapon.setSelectedWeapon();
         }
     }
 
